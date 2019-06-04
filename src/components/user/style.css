@@ -1,0 +1,45 @@
+.abs{
+    position: relative;
+    margin-left: 250px;
+    width: 110%;
+}
+.abd{
+    position: absolute;
+    width: 16rem;
+}
+.card2, .card3, .card4{
+    position: absolute;
+}
+.card3{
+    margin-left: 15rem;
+}
+.card4{
+    margin-left: 30rem;
+}
+#logo{
+    width: 70px;
+    height: 70px;
+}
+#Home{
+    /* visibility: hidden; */
+    position: relative;
+}
+#User{
+    position: relative;
+    margin-left: 250px;
+    /* width: 110%; */
+   
+    /* visibility: hidden; */
+}
+#Home img{
+    width: 450px;
+    height: 350px;
+}
+
+#space img{
+    width: 200px;
+    height: 100px;
+}
+.navbar-brand{
+    font: 2em Times;
+}
