@@ -30,7 +30,7 @@ function AppRouter() {
       <Router>
         <div>
 
-          <nav className="navbar navbar-expand-lg navbar-light login100-form-title">
+          <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:"#50b5e8"}}>
             <a className="navbar-brand" href="#"><img src = {require('../Style/Cri-Port11.png')} width="40px"/></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

@@ -5,14 +5,17 @@ class Missing extends Component {
     render() {
       return (
         <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
-            <div className="col-12 col-md-8" id="User" >
+            <div className="col-12 col-md-12" id="User" >
             <table className="table">
-                <thead className="thead-dark">
+                <thead  style={{background:"#035279",color:"white"}}>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Suspend</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,28 +25,11 @@ class Missing extends Component {
                         <td>Otto</td>
                         <td><img src = {require("../Style/images/Design.png")} width="60px" height="60px" /></td>
                       
-                        <span><button type="button" class="btn btn-primary">Edit</button> </span>
-                        <span><button type="button" class="btn btn-primary">Delete</button> </span>
-                        <span><button type="button" class="btn btn-primary">Suspend</button> </span>
+                        <td><button type="button" class="btn btn-primary">Edit</button> </td>
+                        <td><button type="button" class="btn btn-primary">Delete</button> </td>
+                        <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" /></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <span><button type="button" class="btn btn-primary">Edit</button> </span>
-                        <span><button type="button" class="btn btn-primary">Delete</button> </span>
-                        <span><button type="button" class="btn btn-primary">Suspend</button> </span>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <span><button type="button" class="btn btn-primary">Edit</button> </span>
-                        <span><button type="button" class="btn btn-primary">Delete</button> </span>
-                        <span><button type="button" class="btn btn-primary">Suspend</button> </span>
-                    </tr>
+                  
                 </tbody>
             </table>
             </div>

@@ -5,16 +5,19 @@ class Users extends Component {
     render() {
       return (
         <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
-            <div className="col-md-8">
+            <div className="col-md-12">
             <table className="table container-fluid">
-                <thead className="thead-dark">
+                <thead style={{background:"#035279",color:"white"}}>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Sno</th>
                         <th scope="col">Name</th>
                         <th scope="col">CNIC</th>
                         <th scope="col">Cell No.</th>
                         <th scope="col">Location</th>
                         <th scope="col">Details</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Suspend</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,37 +26,14 @@ class Users extends Component {
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <span><button type="button" class="btn btn-primary">Edit</button> </span>
-                        <span><button type="button" class="btn btn-primary">Delete</button> </span>
-                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" />
+                        <td>Mark</td>
+                        <td>Otto</td>
+                          <td><button type="button" class="btn btn-primary">Edit</button> </td>
+                        <td><button type="button" class="btn btn-primary">Delete</button> </td>
+                         <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" /></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <span><button type="button" class="btn btn-primary">Edit</button> </span>
-                        <span><button type="button" class="btn btn-primary">Delete</button> </span>
-                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" />
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <span><button type="button" class="btn btn-primary">Edit</button> </span>
-                        <span><button type="button" class="btn btn-primary">Delete</button> </span>
-                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" />
-                    </tr>
+                    
+                 
                 </tbody>
             </table>
             </div>
