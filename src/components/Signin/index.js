@@ -17,9 +17,11 @@ import "../Style/css/main.css";
 
 class Signin extends Component {
 
-	routeChange() {
-    // let path = `../router/index.js`;
-    this.props.history.push('../container/dashboard/index.js');
+	routeChange(evt) {
+	// let path = `../router/index.js`;
+	evt.preventDefault();
+	console.log(this.props.history)
+    this.props.history.push('/home');
   }
 
 	render() {
@@ -29,7 +31,7 @@ class Signin extends Component {
 		<div className="container-login100">
 			<div className="wrap-login100">
 				<form className="login100-form validate-form p-l-55 p-r-55 p-t-178">
-					<span className="login100-form-title">
+					<span style={{background:"#50b5e8"}} className="login100-form-title">
 						Sign In
 					</span>
 
@@ -54,20 +56,12 @@ class Signin extends Component {
 					</div>
 
 					<div className="container-login100-form-btn">
-						<button className="login100-form-btn" onClick={this.routeChange} >
+						<button style={{background:"#50b5e8"}} className="login100-form-btn" onClick={(evt) =>this.routeChange(evt)} >
 							Sign in
 						</button>
 					</div>
 
-					<div className="flex-col-c p-t-170 p-b-40">
-						{/* <span class="txt1 p-b-9">
-							Don’t have an account?
-						</span>
-
-						<a href="#" class="txt3">
-							Sign up now
-						</a> */}
-					</div>
+					
 				</form>
 			</div>
 		</div>
