@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import { Router as BrowserRouter, Route, Link } from "react-router-dom";
 
 
@@ -29,8 +29,18 @@ function ComplainRecord() {
   return <ComplainRecord1 />
 }
 
-function AppRouter() {
-  return (
+class AppRouter extends Component{
+  componentWillMount(){
+    let user=localStorage.getItem("user");
+    JSON.parse(user);
+    if(user){
+      history.push("/home")
+    }
+  }
+  
+  render(){
+
+    return (
       <BrowserRouter history={history}>
         <div>
 
@@ -43,6 +53,7 @@ function AppRouter() {
       </div>
     </BrowserRouter>
   );
+}
 }
 
 export default AppRouter;

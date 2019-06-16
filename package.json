@@ -9,6 +9,7 @@
     "google-map-react": "^1.1.4",
     "google-maps-react": "^2.0.2",
     "jquery": "^3.4.1",
+    "jwt-decode": "^2.2.0",
     "mdbreact": "^4.16.0",
     "mdreact": "^0.1.5",
     "pigeon-maps": "^0.13.0",
@@ -16,12 +17,18 @@
     "pusher-js": "^4.4.0",
     "react": "^16.8.6",
     "react-bar-chart": "^0.1.2",
+    "react-circular-progressbar": "^2.0.1",
     "react-dom": "^16.8.6",
     "react-donut-chart": "^1.1.8",
     "react-minimal-pie-chart": "^4.2.0",
+    "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.0.1",
-    "react-toastify": "^5.2.1"
+    "react-spinners": "^0.5.4",
+    "react-toastify": "^5.2.1",
+    "react-toggle-button": "^2.2.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

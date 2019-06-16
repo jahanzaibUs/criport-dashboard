@@ -3,87 +3,211 @@ import React, { Component } from 'react';
 import PieChart from 'react-minimal-pie-chart';
 import { Link } from "react-router-dom";
 import Navbar from '../navbar';
-import DonutChart from 'react-donut-chart'
+import DonutChart from 'react-donut-chart';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+const percentage = 66;
+
 class DashboardAdmin extends Component {
+
+
+    constructor() {
+        super();
+        this.state = {
+            details: [],
+            bike: [],
+            car: [],
+            murder: [],
+            harrasment: [],
+            mobile: [],
+
+        }
+    }
+
+    componentWillReceiveProps(next) {
+        console.log(next);
+        this.setState({ details: next.alldata });
+
+        const details = next.alldata;
+        let bike = [];
+        let car = [];
+        let harrasment = [];
+        let murder = [];
+        let mobile = [];
+
+        details && details.map((text, index) => {
+            console.log(text, "line35")
+            if (text.details.typeid === "bike") {
+                bike.push(text)
+            }
+            else if (text.details.typeid === "car") {
+                car.push(text)
+            }
+            else if (text.details.typeid === "harrasment") {
+                harrasment.push(text)
+            }
+            else if (text.details.typeid === "mobile") {
+                mobile.push(text)
+            }
+            else if (text.details.typeid === "murder") {
+                murder.push(text)
+            }
+        })
+        this.setState({ bike: bike, car: car, harrasment: harrasment, mobile: mobile, murder: murder })
+
+        // }
+        //     componentDidMount(){
+        //         console.log(this.state.details, "line 32")
+        //         const  {details} =this.state;
+        //         let bike =[];
+        //         let car=[];
+        //         let harrasment=[];
+        //         let murder=[];
+        //         let mobile=[];
+
+        //         details  && details.map((text,index)=>{
+        //             console.log(text,"line35")
+        //             if(text.details.typeid ===  "bike"){
+        //                 bike.push(text)
+        //             }
+        //             else if(text.details.typeid === "car"){
+        //                 car.push(text)
+        //             }
+        //             else if(text.details.typeid ==="harrasment"){
+        //                 harrasment.push(text)
+        //             }
+        //             else if(text.details.typeid === "mobile"){
+        //                 mobile.push(text)
+        //             }
+        //             else if(text.details.typeid ==="murder"){
+        //                 murder.push(text)
+        //             }
+        //         })
+
+        //         this.setState({bike:bike, car:car,harrasment:harrasment,mobile:mobile,murder:murder})
+        //     }
+    }
     render() {
+        console.log(this.state)
         return (
 
             <div>
                 <Navbar />
                 <div className="container-fluid">
                     <div className="row justify-content-md-center">
-                        <div style={{display:"inline-flex"}} className="col-12 col-6" id="Home">
+                        <div style={{ display: "inline-flex" }} className="col-12 col-6" id="Home">
 
 
-                            <div style={{ background: "red", width: "50%", height: 800, display: "flex", alignItems: "center" }}>
+                            <div style={{ width: "50%", height: 600, display: "flex", alignItems: "center" }}>
                                 <DonutChart
 
-                                    color={["red"]}
+
                                     data={[{
                                         label: 'Car',
-                                        value: 20,
+                                        value: this.state.car.length,
 
                                     },
                                     {
                                         label: 'Bike',
-                                        value: 10,
+                                        value: this.state.bike.length,
 
                                     },
                                     {
-                                        label: 'Snatching',
-                                        value: 35,
+                                        label: 'Mobile',
+                                        value: this.state.mobile.length,
 
                                     },
                                     {
-                                        label: 'Chart',
-                                        value: 35,
+                                        label: 'Harrasment',
+                                        value: this.state.harrasment.length,
 
                                     },
-                                    ]} />
+                                    {
+                                        label: 'Murder',
+                                        value: this.state.murder.length
+                                    }
+                                    ]}
+
+                                />
                             </div>
 
-                            <div style={{ float: 'right', marginRight: '20%', marginTop: '1%' }}>
+                            <div style={{
+                                width: '100%', display: "inline-flex", justifyContent: "space-between",
+                                alignItems: "center", flexWrap: "wrap",
+                                height: 600,
+                                marginRight: '0%', marginTop: '1%', padding: 10
+                            }}>
 
-                                <div style={{ float: 'right' }} >
-                                    <div className="col-3" >
-                                        <PieChart doughnut={false} style={{ width: 200, position: 'relative' }}
-                                            data={[
-                                                { title: 'One', value: 10, color: '#E38627' },
-                                                { title: 'Two', value: 15, color: '#C13C37' },
-                                                { title: 'Three', value: 20, color: '#6A2135' },
-                                            ]}
-                                        >
 
-                                            <div className="card-body">
-                                                <h5 className="card-title">this is the card 3</h5>
-                                                {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                                                <a href="#" className="btn btn-primary stretched-link">Go somewhere</a>
-                                            </div>
-                                        </PieChart>
-                                    </div>
+                                <div style={{ width: "40%" }} >
+
+
+
+                                    <CircularProgressbar
+
+                                        text={`${this.state.car.length}%`}
+                                        value={this.state.car.length}
+
+                                    />
+
+
                                 </div>
-                                <div style={{ float: 'right' }} >
-                                    <div className="col-3" >
-                                        <PieChart doughnut={false} style={{ width: 200, position: 'relative' }}
-                                            data={[
-                                                { title: 'One', value: 10, color: '#E38627' },
-                                                { title: 'Two', value: 15, color: '#C13C37' },
-                                                { title: 'Three', value: 20, color: '#6A2135' },
-                                            ]}
-                                        >
 
-                                            <div className="card-body">
-                                                <h5 className="card-title">this is the card 3</h5>
-                                                {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                                                <a href="#" className="btn btn-primary stretched-link">Go somewhere</a>
-                                            </div>
-                                        </PieChart>
-                                    </div>
+                                <div style={{ width: "40%" }} >
+
+
+                                    <CircularProgressbar
+
+                                        text={`${this.state.bike.length}%`}
+                                        value={this.state.bike.length}
+
+                                    />
+
+
+                                </div>
+
+
+                                <div style={{ width: "40%" }} >
+
+
+                                    <CircularProgressbar
+
+                                        text={`${this.state.mobile.length}%`}
+                                        value={this.state.mobile.length}
+
+                                    />
+
+
+                                </div>
+
+
+                                <div style={{ width: "40%" }} >
+
+
+                                    <CircularProgressbar
+
+                                        text={`${this.state.harrasment.length}%`}
+                                        value={this.state.harrasment.length}
+
+                                    />
+
+
+                                </div>
+                                <div style={{ width: "40%" }} >
+
+
+                                    <CircularProgressbar
+
+                                        text={`${this.state.harrasment.length}%`}
+                                        value={this.state.murder.length}
+
+                                    />
+
+
                                 </div>
 
 
                             </div>
-
                         </div>
                     </div>
                 </div>
