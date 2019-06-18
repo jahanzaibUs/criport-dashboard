@@ -4,7 +4,8 @@ const initalState={
     userAuth: {},
     userResult: "",
     loader: false,
-    alldata :[]
+    alldata :[],
+    alluser: []
 }
 
 
@@ -33,6 +34,12 @@ export default (state= initalState , action) =>{
                 ...state,
                 alldata: action.payload
             })
+
+            case typesOfAction.alluser:
+                return({
+                    ...state,
+                    alluser: action.payload
+                })
     
         default:
     }

@@ -46,9 +46,9 @@ class AppRouter extends Component{
 
         <Route  path="/" exact component={Signin} />
         <Route path="/home" component={Index} />
-        <Route path="/Users/" component={Users} />
+        <Route path="/Users" component={Users} />
         {/* <Route path="/CrimeReport/" component={CrimeReport} /> */}
-        <Route path="/MissingReport/" component={MissingReport} />
+        <Route path="/MissingReport" component={MissingReport} />
         <Route path="/ComplainRecord/" component={ComplainRecord} />
       </div>
     </BrowserRouter>

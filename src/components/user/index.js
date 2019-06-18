@@ -11,6 +11,10 @@ class Users extends Component {
             }
         }
     }
+
+    componentDidMount(){
+        console.log(this.props.users)
+    }
     render() {
         return (
 

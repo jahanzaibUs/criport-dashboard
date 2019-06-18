@@ -58,3 +58,15 @@ export function crimedata(){
         })
     }
 }
+
+export function allusers(){
+    return dispatch => {
+        axios.get("https://criportserver.herokuapp.com/alluser").then(data  => {
+            console.log(data);
+            // dispatch({
+            //     type:typesOfAction.users,
+            //     payload:data.data.users
+            // })
+        })
+    }
+}
