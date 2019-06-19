@@ -5,7 +5,8 @@ const typesOfAction={
     userResult: "",
     signinloader: false,
     alldata: "alldata",
-    alluser:"alluser"
+    alluser:"alluser",
+    missing:"missing"
 }
 
 

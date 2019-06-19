@@ -5,13 +5,20 @@ const initalState={
     userResult: "",
     loader: false,
     alldata :[],
-    alluser: []
+    alluser: [],
+    missingpeople: []
 }
 
 
 
 export default (state= initalState , action) =>{
     switch(action.type){
+
+        case typesOfAction.missing:
+            return({
+                ...state,
+                missingpeople: action.payload
+            })
         case typesOfAction.users:
         return({
             ...state,

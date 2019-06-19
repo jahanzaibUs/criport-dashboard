@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import Navbar from '../navbar';
 import DonutChart from 'react-donut-chart';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import Footer from "../Footer"
 import 'react-circular-progressbar/dist/styles.css';
+
 const percentage = 66;
 
 class DashboardAdmin extends Component {
@@ -211,6 +213,8 @@ class DashboardAdmin extends Component {
                         </div>
                     </div>
                 </div>
+
+                <Footer />
             </div>
 
         );

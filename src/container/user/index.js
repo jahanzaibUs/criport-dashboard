@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import Users from "../../components/user";
 import { connect } from "react-redux"
-import { allusers } from '../../store/action/action';
+import { allusers, suspend } from '../../store/action/action';
 
 
 class Users1 extends Component {
   componentDidMount(){
-    console.log("fsdfsdfsdfsdf")
-    this.props.getallusers()
+    this.props.getallusers();
+    
   }
+
+  
   render() {
     return (
       <Users
-          users={this.props.users}
+          user={this.props.getuser}
+          suspend={this.props.suspenduser}
       />
     );
   }
@@ -25,7 +28,7 @@ function mapStateToProps(state) {
   console.log(state.root)
   return {
 
-        users : state.root.users
+        getuser : state.root.alluser
     //  productData : state.root.productData
      
   }
@@ -34,7 +37,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
 
-    getallusers: () => { dispatch(allusers()) }
+    getallusers: () => { dispatch(allusers())},
+    suspenduser: (data) => {dispatch(suspend(data))} 
     // getdata: () => {dispatch(crimedata())}
   }
 }

@@ -62,11 +62,48 @@ export function crimedata(){
 export function allusers(){
     return dispatch => {
         axios.get("https://criportserver.herokuapp.com/alluser").then(data  => {
-            console.log(data);
-            // dispatch({
-            //     type:typesOfAction.users,
-            //     payload:data.data.users
-            // })
+           
+            dispatch({
+                type:typesOfAction.alluser,
+                payload:data.data.users
+            })
+        })
+    }
+}
+
+export function suspend(data){
+    return dispatch => {
+        console.log(data)
+        axios.put(`https://criportserver.herokuapp.com/suspend/${data.uid}`,data).then(dataa  => {
+           
+            dispatch({
+                type:typesOfAction.alluser,
+                payload:dataa.data.users
+            })
+        })
+    }
+}
+
+export function allmissing(){
+    return dispatch => {
+        axios.get("https://criportserver.herokuapp.com/getmissingpeople").then(data  => {
+           
+            dispatch({
+                type:typesOfAction.missing,
+                payload:data.data.missing
+            })
+        })
+    }
+}
+export function allowmissing(data){
+    return dispatch => {
+        console.log(data)
+        axios.put(`https://criportserver.herokuapp.com/approve/${data.uid}`,data).then(dataa  => {
+           console.log(dataa)
+            dispatch({
+                type:typesOfAction.missing,
+                payload:dataa.data.missing
+            })
         })
     }
 }
