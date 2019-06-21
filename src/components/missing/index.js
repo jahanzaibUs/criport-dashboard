@@ -21,9 +21,15 @@ class Missing extends Component {
 
 
     suspend(text){
+        console.log(text)
         let data = {
             approve : !text.persons.approve,
-            uid: text._id
+            uid: text._id,
+            Name: text.persons.Name,
+            Description: text.persons.Description,
+            dateAndTime: new Date(),
+            iamgeURL: text.persons.iamgeURL,
+            Location : text.persons.Location
         }
        this.props.allowmissing(data)
     }

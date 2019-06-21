@@ -1,8 +1,15 @@
 import  React,{ Component } from "react";
 import {  Link } from "react-router-dom";
+import history from "../../history/history";
 
 
 export default class Navbar extends Component{
+
+
+  logout(){
+    localStorage.clear();
+     history.push('/')
+  }
     render(){
         return(
             <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:"#50b5e8"}}>
@@ -26,6 +33,9 @@ export default class Navbar extends Component{
                 </li>
                 <li class="nav-item">
                   <Link class="nav-link" to="/ComplainRecord/">Complain Report</Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" onClick={() => this.logout()} >Log Out</Link>
                 </li>
               </ul>
             </div>
