@@ -20,7 +20,7 @@ export function signin(data){
             if(res.data.token){
                 let jwt = jwt_decode(res.data.token);
                 
-                if(jwt.admin === true){
+                if(jwt.admin === true){ 
 
                     dispatch({
                         type: typesOfAction.users,
@@ -104,6 +104,48 @@ export function allowmissing(data){
                 type:typesOfAction.missing,
                 payload:dataa.data.missing
             })
+        })
+    }
+}
+
+
+export function  deleteuser(data){
+    return dispatch => {
+        axios.delete(`https://criportserver.herokuapp.com/deleteuer/${data.uid}`).then((deletedata) => {
+            console.log(deletedata);
+            dispatch({
+                type:typesOfAction.alluser,
+                payload: deletedata.data
+            })
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+}
+
+export function deletemissing(data){
+    console.log(data)
+    return dispatch => {
+        axios.delete(`https://criportserver.herokuapp.com/deletemissing/${data.uid}`).then((deletemissing) => {
+            console.log(deletemissing);
+            dispatch({
+                type: typesOfAction.missing,
+                payload: deletemissing.data
+            })
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+}
+
+export function submitrecord(details){
+    console.log(details)
+    return dispatch => {
+        axios.post(`https://criportserver.herokuapp.com/crimedetails`,{details}).then((getdata) =>{ 
+            console.log(getdata.data);
+            alert("Succefully added data to the Map")
+        }).catch(err => {
+            console.log(err)
         })
     }
 }

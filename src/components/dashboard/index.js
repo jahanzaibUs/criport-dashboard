@@ -141,13 +141,13 @@ class DashboardAdmin extends Component {
                             }}>
 
 
-                                <div style={{ width: "40%" }} >
+                                <div style={{ width: "20%" }} >
 
 
-
+                                        <h2 style={{fontSize:20 ,textAlign:"center"}}>Car</h2>
                                     <CircularProgressbar
-
-                                        text={`${this.state.car.length}%`}
+                                        
+                                        text={`${this.state.car.length + "%"}`}
                                         value={this.state.car.length}
 
                                     />
@@ -155,9 +155,9 @@ class DashboardAdmin extends Component {
 
                                 </div>
 
-                                <div style={{ width: "40%" }} >
+                                <div style={{ width: "20%" }} >
 
-
+                                <h2 style={{fontSize:20,textAlign:"center"}}>Bike</h2>
                                     <CircularProgressbar
 
                                         text={`${this.state.bike.length}%`}
@@ -169,9 +169,9 @@ class DashboardAdmin extends Component {
                                 </div>
 
 
-                                <div style={{ width: "40%" }} >
+                                <div style={{ width: "20%",textAlign:"center"}} >
 
-
+                                <h2 style={{fontSize:20}}>Mobile</h2>
                                     <CircularProgressbar
 
                                         text={`${this.state.mobile.length}%`}
@@ -183,9 +183,9 @@ class DashboardAdmin extends Component {
                                 </div>
 
 
-                                <div style={{ width: "40%" }} >
+                                <div style={{ width: "20%",textAlign:"center"}} >
 
-
+                                <h2 style={{fontSize:20}}>Harrasment</h2>
                                     <CircularProgressbar
 
                                         text={`${this.state.harrasment.length}%`}
@@ -195,12 +195,13 @@ class DashboardAdmin extends Component {
 
 
                                 </div>
-                                <div style={{ width: "40%" }} >
+                                <div style={{ width: "20%" ,textAlign:"center"}} >
 
+                                <h2 style={{fontSize:20}}>Murder</h2>
 
                                     <CircularProgressbar
 
-                                        text={`${this.state.harrasment.length}%`}
+                                        text={`${this.state.murder.length}%`}
                                         value={this.state.murder.length}
 
                                     />

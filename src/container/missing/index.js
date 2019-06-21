@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Missing from "../../components/missing";
 import {connect} from "react-redux";
-import { allmissing, allowmissing } from '../../store/action/action';
+import { allmissing, allowmissing, deletemissing } from '../../store/action/action';
 
 class Missing1 extends Component {
 
@@ -13,6 +13,7 @@ class Missing1 extends Component {
         <Missing 
           missing= {this.props.detailmissing}
           allowmissing={this.props.allowmissing}
+          deletemissing={this.props.deletemissing}
         />
       );
     }
@@ -34,8 +35,8 @@ class Missing1 extends Component {
     return {
   
         missingpeople : () => {dispatch(allmissing())},
-        allowmissing :(data) => {dispatch(allowmissing(data))}
-      // getdata: () => {dispatch(crimedata())}
+        allowmissing :(data) => {dispatch(allowmissing(data))},
+        deletemissing: (data) => {dispatch(deletemissing(data))}
     }
   }
 

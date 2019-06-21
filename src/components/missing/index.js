@@ -27,6 +27,14 @@ class Missing extends Component {
         }
        this.props.allowmissing(data)
     }
+
+    deletemissing(text){
+        console.log(text);
+        let data = {
+            uid: text._id
+        }
+        this.props.deletemissing(data)
+    }
     render() {
         console.log(this.state.Missing)
         return (
@@ -59,7 +67,7 @@ class Missing extends Component {
                                                 <td>{text.persons.Description}</td>
 
                                                 <td><button type="button" class="btn btn-primary">Edit</button> </td>
-                                                <td><button type="button" class="btn btn-primary">Delete</button> </td>
+                                                <td><button type="button" onClick={() => this.deletemissing(text)} class="btn btn-primary">Delete</button> </td>
                                                 <td>
                                                 {
                                                        text.persons.approve  ?
@@ -71,24 +79,7 @@ class Missing extends Component {
                                         )
                                     })
                                 }
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-
-                                    <td><button type="button" class="btn btn-primary">Edit</button> </td>
-                                    <td><button type="button" class="btn btn-primary">Delete</button> </td>
-                                    <td>
-                                        <ToggleButton
-
-                                            value={this.state.value || false}
-                                            onToggle={(value) => {
-                                                this.setState({
-                                                    value: !value,
-                                                })
-                                            }} />
-                                    </td>
-                                </tr>
+                               
 
                             </tbody>
                         </table>

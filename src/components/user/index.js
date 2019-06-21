@@ -42,6 +42,14 @@ class Users extends Component {
        
         //  this.setState({users : array})
     }
+
+    deleteuserprofile(text){
+        console.log(text._id);
+        let data ={ 
+            uid: text._id
+        }
+        this.props.deleteuser(data)
+    }
     render() {
         return (
 
@@ -80,7 +88,8 @@ class Users extends Component {
                                                 <td><button type="button"
                                                 
                                                 class="btn btn-primary">Edit</button> </td>
-                                                <td><button type="button" class="btn btn-primary">Delete</button> </td>
+                                                <td><button type="button" onClick={() => this.deleteuserprofile(text)}
+                                                class="btn btn-primary">Delete</button> </td>
                                                 <td>
                                                    {
                                                        text.suspend  ?

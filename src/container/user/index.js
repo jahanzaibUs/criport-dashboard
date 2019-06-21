@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Users from "../../components/user";
 import { connect } from "react-redux"
-import { allusers, suspend } from '../../store/action/action';
+import { allusers, suspend, deleteuser } from '../../store/action/action';
 
 
 class Users1 extends Component {
@@ -16,6 +16,7 @@ class Users1 extends Component {
       <Users
           user={this.props.getuser}
           suspend={this.props.suspenduser}
+          deleteuser={this.props.deleteuser}
       />
     );
   }
@@ -38,7 +39,8 @@ function mapDispatchToProps(dispatch) {
   return {
 
     getallusers: () => { dispatch(allusers())},
-    suspenduser: (data) => {dispatch(suspend(data))} 
+    suspenduser: (data) => {dispatch(suspend(data))},
+    deleteuser: (data) => {dispatch(deleteuser(data))}
     // getdata: () => {dispatch(crimedata())}
   }
 }

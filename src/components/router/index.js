@@ -7,7 +7,7 @@ import '../Root/App.css';
 import DashboardAd from "../../container/dashboard";
 import Users1 from '../../container/user';
 import Missing1 from '../../container/missing';
-import ComplainRecord1 from '../../container/Complain';
+import ComplainRecord1 from '../../components/Complain/index';
 import SigninCon from "../../container/Signin";
 import history from "../../history/history"
 
@@ -49,7 +49,7 @@ class AppRouter extends Component{
         <Route path="/Users" component={Users} />
         {/* <Route path="/CrimeReport/" component={CrimeReport} /> */}
         <Route path="/MissingReport" component={MissingReport} />
-        <Route path="/ComplainRecord/" component={ComplainRecord} />
+        <Route path="/ComplainRecord" component={ComplainRecord} />
       </div>
     </BrowserRouter>
   );
